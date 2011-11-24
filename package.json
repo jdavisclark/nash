@@ -1,0 +1,23 @@
+{
+    "name": "nash",
+    "version": "0.0.1",
+    "description": "An easy to use wrapper over the child process library with some bash/sh style enhancements",
+    "keywords": ["command", "child_process", "bash", "spawn", "exec"],
+    "contributors": ["Davis Clark <https://github.com/jdc0589>"],
+    "licenses": [{
+        "type": "MIT",
+        "url": "http://www.opensource.org/licenses/mit-license.html"
+    }],
+    "bugs": {
+        "url": "http://github.com/jdc0589/nash/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/jdc0589/nash"
+    },
+    "main": "./src/nash.js",
+    "dependencies": {
+        "node-proxy": ">=0.5.2",
+        "q": ">=0.7.2"
+    }
+}
