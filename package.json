@@ -1,7 +1,7 @@
 {
     "name": "nash",
-    "version": "0.0.1",
-    "description": "An easy to use wrapper over the child process library with some bash/sh style enhancements",
+    "version": "0.0.2",
+    "description": "An easy to use wrapper over the child process library",
     "keywords": ["command", "child_process", "bash", "spawn", "exec"],
     "contributors": ["Davis Clark <https://github.com/jdc0589>"],
     "licenses": [{
