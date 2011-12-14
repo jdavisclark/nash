@@ -9,7 +9,6 @@ function NashCommand(cmd, args, options) {
     this.command = cmd;
     this.args = args || [];
     this.options = options || {};
-    this.options.async = !!this.options.async;
 }
 
 NashCommand.prototype.commandString = function() {
