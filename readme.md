@@ -12,7 +12,6 @@ process commands (node bindings are always the best idea if its an option).
 ```javascript
 var nash = require("nash");
 
-
 //fire up an ssh tunnel
 nash.ssh("-L", "5985:127.0.0.1:5984", "yourcouchdbserver.com", "-N").then(function() {
   console.log("connection terminated!");
@@ -31,12 +30,8 @@ nash("ps", "-U", "someuser", "-o", "pid").then(function(output) {
 });
 
 //wget a file
-var getgoogle1 = nash["cd /tmp && wget"];
-getgoogle1("http://www.google.com").then(function(){});
-//or 
-var wget = nash.wget;
-wget("http://www.google.com").then(function(){});
-
+var wgettotmp = nash["cd /tmp && wget"];
+wgettotmp("http://www.google.com").then(function(){});
 
 ```
 
