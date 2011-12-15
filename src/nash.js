@@ -9,7 +9,6 @@ module.exports = Proxy.createFunction({
         }
     }
 }, function(name) {
-    console.log(name);
     return getCommand(name, Array.prototype.slice.call(arguments).slice(1)).exec();
 });
 
