@@ -1,0 +1,44 @@
+#nash
+nash is an easy to work with abstraction of the node child_process module. 
+Not all the features are available yet, but its coming along. 
+
+## why use it
+Nash has an extremely flexible syntax that supports callback functions and promises. If your applicatation needs to use
+a library that has a command line executable but no native node bindings, nash makes it really easy to fire off child 
+process commands (node bindings are always the best idea if its an option).
+
+## contrived examples
+
+```javascript
+var nash = require("nash");
+
+
+//fire up an ssh tunnel
+nash.ssh("-L", "5985:127.0.0.1:5984", "yourcouchdbserver.com", "-N").then(function() {
+  console.log("connection terminated!");
+});
+
+
+//use curl for some reason
+nash.curl("http://www.google.com", function(output) {
+  //do stuff with html
+}); 
+
+
+//get some process ids
+nash("ps", "-U", "someuser", "-o", "pid").then(function(output) {
+  var pids = output.split("\n").slice(1);
+});
+
+//wget a file
+var getgoogle1 = nash["cd /tmp && wget"];
+getgoogle1("http://www.google.com").then(function(){});
+//or 
+var wget = nash.wget;
+wget("http://www.google.com").then(function(){});
+
+
+```
+
+
+
