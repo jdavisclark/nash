@@ -26,9 +26,9 @@ NashCommand.prototype.exec = function() {
         cwd: this.options.cwd || __dirname
     }, function(err, stdout, stderr) {
         if (err) {
-            self.options.callback ? self.options.callback(stderr, true) : def.reject(stderr);
+            self.options.callback ? self.options.callback(stderr) : def.reject(stderr);
         } else {
-            self.options.callback ? self.options.callback(stdout) : def.resolve(stdout);
+            self.options.callback ? self.options.callback(false, stdout) : def.resolve(stdout);
         };
     });
     return !!this.options.callback || def.promise;
