@@ -19,10 +19,6 @@ NashCommand.prototype.spawn = function() {
     return spawn(this.command, this.args);
 }
 
-NashCommand.prototype.commandString = function() {
-    return this.command + " " + this.args.join(" ");
-}
-
 NashCommand.prototype.exec = function() {
     var self = this;
     var def = !!this.options.callback || q.defer();
